@@ -25,8 +25,7 @@ label var numempl "Employment"
 label var clae "AFIP: Sector actividad 6 digitos"
 
 *Lets only keep firms for which we observe positive employment and CLAE.
-*This are all firms that existed at some year. Maybe 2007. We should ask Fede.
-*This is not important. Most of the firms we are deleting are very small and do not import or export.
+*This are all firms that existed at some year. 
 
 keep if _merge==3
 keep if Year>=2003 & Year<=2011
@@ -88,10 +87,6 @@ drop if Year==.
 drop _merge
 *--------------------------------------------------------------------
 
-
-**Does it makes sense to fillin here? This will put ceros to non-active firms in some years.
-**But it will create a balance panel. Adding this ceros make effect on imports too high.
-fillin ID Year
 
 
 *--------------------------------------------------------------------
